@@ -1,0 +1,14 @@
+{
+    "name": "vendor/bigdata",
+    "description": "Descrição do projeto bigdata.",
+    "authors": [
+        {
+            "name": "Francisco Ernesto Teixeira",
+            "email": "fco.ernesto@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "2.4.3",
+        "doctrine/mongodb-odm": "1.0.0-BETA11"
+    }
+}
