@@ -30,15 +30,15 @@ function PrincipalController($scope, $resource) {
     };
 
     $scope.salvar = function() {
-        var novoRegistro = ($scope.pessoa.id === null);
+        var novoRegistro = (typeof $scope.pessoa.id === 'undefined');
         $scope.pessoa.$save(function(pessoa) {
             $scope.pessoa = pessoa;
+
+            if (novoRegistro) {
+                $scope.atualizar();
+            }
         });
         $scope.mostrarFormulario = false;
-
-        if (novoRegistro) {
-            $scope.atualizar();
-        }
     };
 
     $scope.cancelar = function() {
