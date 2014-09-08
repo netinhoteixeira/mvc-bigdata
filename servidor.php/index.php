@@ -19,6 +19,9 @@ $annotationDriver = $config->newDefaultAnnotationDriver(array(__DIR__ . '/model'
 $config->setMetadataDriverImpl($annotationDriver);
 AnnotationDriver::registerAnnotationClasses();
 
+// define o banco selecionado, caso não tenha sido
+$config->setDefaultDB('mvc-bigdata');
+
 $dm = DocumentManager::create(new Connection(), $config);
 
 // DONE: Muito importante, certifica-se que os índices foram criados
