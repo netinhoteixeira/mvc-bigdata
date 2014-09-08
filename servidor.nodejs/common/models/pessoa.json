@@ -1,0 +1,21 @@
+{
+    "name": "Pessoa",
+    "plural": "Pessoas",
+    "base": "PersistedModel",
+    "properties": {
+        "cadastro": {
+            "type": "date"
+        },
+        "nome": {
+            "type": "string",
+            "required": true
+        },
+        "nascimento": {
+            "type": "date"
+        }
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [],
+    "methods": []
+}
