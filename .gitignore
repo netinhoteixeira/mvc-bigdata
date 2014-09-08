@@ -1,4 +1,4 @@
-/nbproject/private/
-composer.lock
-cache
-vendor
+servidor.php/nbproject/private
+servidor.php/composer.lock
+servidor.php/cache
+servidor.php/vendor

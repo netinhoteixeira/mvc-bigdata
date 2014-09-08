@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Aplicativo MVC com Big Data</title>
+        <title>Aplicativo MVC com Big Data - PHP + MongoDB</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -46,7 +46,7 @@
                 </tr>
                 <tr ng-show="pessoa.cadastro">
                     <td>Cadastro</td>
-                    <td>{{pessoa.cadastro}}</td>
+                    <td>{{pessoa.cadastro | date:'dd/MM/yyyy'}}</td>
                 </tr>
                 <tr>
                     <td>Nome:</td>
