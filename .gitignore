@@ -3,3 +3,6 @@ servidor.php/composer.lock
 servidor.php/cache
 servidor.php/vendor
 servidor.nodejs/node_modules
+/servidor.nodejs/nbproject/private/
+/_servidor.nodejs/nbproject/private/
+/_servidor.nodejs/node_modules/

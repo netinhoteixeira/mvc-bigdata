@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                     <td>Nascimento</td>
-                    <td><input type="date" ng-model="pessoa.nascimento" /></td>
+                    <td><input type="text" ng-model="pessoa.nascimento" /></td>
                 </tr>
                 <tr ng-show="pessoa.idade">
                     <td>Idade</td>
@@ -65,8 +65,8 @@
             <button ng-click="cancelar()">Cancelar</button>
         </div>
 
-        <script src="view/assets/js/angular/angular.min.js"></script>
-        <script src="view/assets/js/angular/angular-resource.min.js"></script>
+        <script src="view/bower_components/angular/angular.min.js"></script>
+        <script src="view/bower_components/angular-resource/angular-resource.min.js"></script>
         <script src="view/assets/js/main.js"></script>
     </body>
 </html>

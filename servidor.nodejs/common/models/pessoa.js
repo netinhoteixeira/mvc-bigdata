@@ -1,6 +1,6 @@
-module.exports = function(Pessoa) {
+module.exports = function (Pessoa) {
 
-    Pessoa.beforeCreate = function(next, data) {
+    Pessoa.beforeCreate = function (next, data) {
         data.cadastro = new Date();
         next();
     };

@@ -1,6 +1,46 @@
+// o módulo principal (app)
 var app = angular.module('app', ['ngResource']);
 
-function PrincipalController($scope, $resource) {
+// adiciona um serviço
+app.service('DataService', function () {
+
+    /**
+     * Calcula a idade com a data de nascimento fornecida.
+     * 
+     * @param {String} nascimento
+     * @return {Number}
+     */
+    this.calcularIdade = function (nascimento) {
+        var today = new Date();
+        var birthDate = new Date(nascimento);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+
+        return age;
+    };
+
+    this.formatarParaEditar = function (data) {
+        var pedacos = data.split('-');
+
+        return pedacos[2] + '/' + pedacos[1] + '/' + pedacos[0];
+    };
+
+    this.formatarParaSalvar = function (data) {
+        var pedacos = data.split('/');
+
+        return pedacos[2] + '-' + pedacos[1] + '-' + pedacos[0];
+    };
+
+    this.processarSalvo = function (data) {
+        return data.substring(0, 10)
+    };
+});
+
+// adiciona um controlador
+app.controller('PrincipalController', function ($scope, $resource, DataService) {
     var Pessoa = $resource('/cadastro/pessoa/:id', {id: '@id'});
 
     $scope.pessoas = [];
@@ -13,25 +53,32 @@ function PrincipalController($scope, $resource) {
         idade: null
     };
 
-    $scope.atualizar = function() {
+    $scope.atualizar = function () {
         $scope.mostrarFormulario = false;
-        $scope.pessoas = Pessoa.query(function() {
+        $scope.pessoas = Pessoa.query(function () {
         });
     };
 
-    $scope.adicionar = function() {
+    $scope.adicionar = function () {
         $scope.pessoa = new Pessoa();
         $scope.mostrarFormulario = true;
     };
 
-    $scope.editar = function(pessoa) {
+    $scope.editar = function (pessoa) {
         $scope.pessoa = pessoa;
+        $scope.pessoa.nascimento = DataService.formatarParaEditar($scope.pessoa.nascimento);
+
         $scope.mostrarFormulario = true;
     };
 
-    $scope.salvar = function() {
+    $scope.salvar = function () {
         var novoRegistro = (typeof $scope.pessoa.id === 'undefined');
-        $scope.pessoa.$save(function(pessoa) {
+
+        $scope.pessoa.nascimento = DataService.formatarParaSalvar($scope.pessoa.nascimento);
+
+        $scope.pessoa.$save(function (pessoa) {
+            pessoa.nascimento = DataService.processarSalvo(pessoa.nascimento);
+            pessoa.idade = DataService.calcularIdade(pessoa.nascimento);
             $scope.pessoa = pessoa;
 
             if (novoRegistro) {
@@ -41,14 +88,14 @@ function PrincipalController($scope, $resource) {
         $scope.mostrarFormulario = false;
     };
 
-    $scope.cancelar = function() {
+    $scope.cancelar = function () {
         $scope.mostrarFormulario = false;
     };
 
-    $scope.remover = function(pessoa) {
+    $scope.remover = function (pessoa) {
         $scope.mostrarFormulario = false;
         pessoa.$remove();
     };
 
     $scope.atualizar();
-}
+});

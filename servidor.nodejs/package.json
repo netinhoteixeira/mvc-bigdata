@@ -1,7 +1,9 @@
 {
-    "name": "mvc-bigdata",
-    "version": "0.0.0",
-    "main": "server/server.js",
+    "name": "servidor.nodejs",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "francisco",
+    "contributors": [],
     "scripts": {
         "pretest": "jshint ."
     },
