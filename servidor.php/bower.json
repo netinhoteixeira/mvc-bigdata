@@ -1,0 +1,13 @@
+{
+  "name": "mvc-bigdata",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "angular-resource": "1.5.*"
+  },
+  "devDependencies": {}
+}

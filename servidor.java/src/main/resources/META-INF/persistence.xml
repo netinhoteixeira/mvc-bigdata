@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence              http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="primary" transaction-type="JTA">
+        <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+        <class>pro.francisco.servidor.java.model.Pessoa</class>
+        <properties>
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>
+            <!-- reference: http://docs.jboss.org/hibernate/ogm/4.1/reference/en-US/html_single/#_configuring_mongodb -->
+            <property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.mongodb.MongoDBDialect" />
+            <property name="hibernate.ogm.datastore.provider" value="mongodb" />
+            <property name="hibernate.ogm.datastore.database" value="mvc-bigdata-java" />
+            <property name="hibernate.ogm.mongodb.connection_timeout" value="5000" />
+        </properties>
+    </persistence-unit>
+</persistence>

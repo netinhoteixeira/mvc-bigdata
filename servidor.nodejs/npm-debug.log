@@ -1,0 +1,25 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'run-script', 'test' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.25
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info pretest servidor.nodejs@1.0.0
+6 verbose unsafe-perm in lifecycle true
+7 info servidor.nodejs@1.0.0 Failed to exec pretest script
+8 error servidor.nodejs@1.0.0 pretest: `jshint .`
+8 error Exit status 2
+9 error Failed at the servidor.nodejs@1.0.0 pretest script.
+9 error This is most likely a problem with the servidor.nodejs package,
+9 error not with npm itself.
+9 error Tell the author that this fails on your system:
+9 error     jshint .
+9 error You can get their info via:
+9 error     npm owner ls servidor.nodejs
+9 error There is likely additional logging output above.
+10 error System Linux 4.2.0-35-generic
+11 error command "/usr/bin/nodejs" "/usr/bin/npm" "run-script" "test"
+12 error cwd /home/francisco/Projetos/mvc-bigdata/servidor.nodejs
+13 error node -v v0.10.25
+14 error npm -v 1.4.21
+15 error code ELIFECYCLE
+16 verbose exit [ 1, true ]
