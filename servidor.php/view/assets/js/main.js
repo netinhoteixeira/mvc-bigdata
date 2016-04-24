@@ -41,7 +41,7 @@ app.service('DataService', function () {
 
 // adiciona um controlador
 app.controller('PrincipalController', function ($scope, $resource, DataService) {
-    var Pessoa = $resource('/cadastro/pessoa/:id', {id: '@id'});
+    var Pessoa = $resource('/api/cadastro/pessoa/:id', {id: '@id'});
 
     $scope.pessoas = [];
     $scope.atualizado = false;

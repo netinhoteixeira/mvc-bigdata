@@ -39,7 +39,7 @@ $app->get('/', function() {
 });
 
 // listagem
-$app->get('/cadastro/pessoa', function() {
+$app->get('/api/cadastro/pessoa', function() {
     global $dm;
 
     echo json_encode($dm
@@ -48,13 +48,13 @@ $app->get('/cadastro/pessoa', function() {
 });
 
 // obter registro
-$app->get('/cadastro/pessoa/:id', function($id) {
+$app->get('/api/cadastro/pessoa/:id', function($id) {
     print_r($id);
     // não implementado
 });
 
 // persistir novo registro
-$app->post('/cadastro/pessoa', function() {
+$app->post('/api/cadastro/pessoa', function() {
     global $dm;
 
     // DONE: Méau
@@ -72,7 +72,7 @@ $app->post('/cadastro/pessoa', function() {
 });
 
 // persistir registro existente
-$app->post('/cadastro/pessoa/:id', function($id) {
+$app->post('/api/cadastro/pessoa/:id', function($id) {
     global $dm;
 
     // DONE: Méau
@@ -91,7 +91,7 @@ $app->post('/cadastro/pessoa/:id', function($id) {
 });
 
 // obter registro
-$app->delete('/cadastro/pessoa/:id', function($id) {
+$app->delete('/api/cadastro/pessoa/:id', function($id) {
     global $dm;
 
     $pessoa = $dm->getRepository('Model\Pessoa')->find($id);

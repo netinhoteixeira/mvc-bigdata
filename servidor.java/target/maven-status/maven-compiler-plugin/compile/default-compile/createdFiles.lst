@@ -1,0 +1,7 @@
+pro/francisco/servidor/java/dao/PessoaDAO.class
+pro/francisco/servidor/java/model/pojo/Pessoa.class
+pro/francisco/servidor/java/model/pojo/BaseEntity.class
+pro/francisco/servidor/java/service/MorphiaService.class
+pro/francisco/servidor/java/model/dto/PessoaDTO.class
+pro/francisco/servidor/java/controller/PessoaController.class
+pro/francisco/servidor/java/dao/BaseDAOInterface.class

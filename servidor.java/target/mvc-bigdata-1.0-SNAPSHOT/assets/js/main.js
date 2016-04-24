@@ -41,12 +41,7 @@ app.service('DataService', function () {
 
 // adiciona um controlador
 app.controller('PrincipalController', function ($scope, $resource, DataService) {
-    var Pessoa = $resource('/api/Pessoas/:id', {id: '@id'}, {
-        // o loopback.io não possui o POST para salvar
-        'save': {
-            method: 'PUT'
-        }
-    });
+    var Pessoa = $resource('/api/cadastro/pessoa/:id', {id: '@id'});
 
     $scope.pessoas = [];
     $scope.atualizado = false;
@@ -60,24 +55,7 @@ app.controller('PrincipalController', function ($scope, $resource, DataService) 
 
     $scope.atualizar = function () {
         $scope.mostrarFormulario = false;
-        $scope.pessoas = Pessoa.query(function (dados) {
-
-            // varre os dados encontrados
-            for (var i = 0; i < dados.length; i++) {
-                if (dados[i].cadastro !== null) {
-                    dados[i].cadastro = new Date(dados[i].cadastro);
-                }
-
-                // caso haja data de nascimento
-                if (dados[i].nascimento !== null) {
-                    dados[i].idade = DataService.calcularIdade(dados[i].nascimento);
-
-                    dados[i].nascimento = dados[i].nascimento.split('T');
-                    dados[i].nascimento = dados[i].nascimento[0];
-                }
-            }
-
-            return dados;
+        $scope.pessoas = Pessoa.query(function () {
         });
     };
 

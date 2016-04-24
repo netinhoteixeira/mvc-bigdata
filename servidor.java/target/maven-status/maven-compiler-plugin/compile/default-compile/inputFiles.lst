@@ -1,3 +1,7 @@
-/home/francisco/Projetos/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/controller/PessoaController.java
-/home/francisco/Projetos/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/model/Pessoa.java
-/home/francisco/Projetos/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/Main.java
+/Users/francisco/CustomersOffline/com.github/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/model/pojo/Pessoa.java
+/Users/francisco/CustomersOffline/com.github/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/controller/PessoaController.java
+/Users/francisco/CustomersOffline/com.github/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/dao/PessoaDAO.java
+/Users/francisco/CustomersOffline/com.github/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/model/pojo/BaseEntity.java
+/Users/francisco/CustomersOffline/com.github/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/service/MorphiaService.java
+/Users/francisco/CustomersOffline/com.github/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/dao/BaseDAOInterface.java
+/Users/francisco/CustomersOffline/com.github/mvc-bigdata/servidor.java/src/main/java/pro/francisco/servidor/java/model/dto/PessoaDTO.java
