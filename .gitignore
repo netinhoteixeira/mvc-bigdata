@@ -8,3 +8,6 @@ servidor.nodejs/node_modules
 /_servidor.nodejs/node_modules/
 servidor.php/view/bower_components
 servidor.nodejs/public/bower_components
+.DS_Store
+/servidor.java/target/
+servidor.java/src/main/webapp/bower_components
